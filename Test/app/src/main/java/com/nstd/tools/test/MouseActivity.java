@@ -282,9 +282,10 @@ public class MouseActivity extends Activity {
         public void run() {
             parent.log("clientListenerThread start");
             try {
-                socket = new DatagramSocket();
+                socket = new DatagramSocket(INPORT + 5);
                 socket.setSoTimeout(5000);
                 String host = "192.168.0.102";
+//                String host = "255.255.255.255";
 //                String[] ipStr = host.split("\\.");
 //                byte[] ipBuf = new byte[4];
 //                for(int i = 0; i < 4; i++){

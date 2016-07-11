@@ -484,7 +484,7 @@ public class MouserServer extends javax.swing.JFrame {
                 while(true) {
                      socket.receive(dp);
                     //接收到客户端的消息
-                    String msg = Dgram.toString(dp);
+                    String msg = Dgram.toString(dp).trim();
                     String rcvd = msg + ",from address:"
                             + dp.getAddress() + ",port:" + dp.getPort();
                     parent.log("From Client:"+rcvd);
@@ -497,12 +497,12 @@ public class MouserServer extends javax.swing.JFrame {
                     parent.addClient(clientInfo);
                     
                     DatagramPacket echo;
-                    System.out.println("msg=" + msg.trim() 
-                            + " ir=" + "request".equals(msg.trim())
+                    System.out.println("msg=" + msg
+                            + " ir=" + "request".equals(msg)
                             + " ca=" + currentClientAddress 
                             + " da=" + dp.getAddress().getHostAddress()
                             + " eq=" + dp.getAddress().getHostAddress().equals(currentClientAddress));
-                    if("request".equals(msg.trim())
+                    if("request".equals(msg)
                             && currentClientAddress != null 
                             && dp.getAddress().getHostAddress().equals(currentClientAddress)) {
                         
