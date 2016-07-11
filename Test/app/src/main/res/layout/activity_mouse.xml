@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/scroll_vertical"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_above="@+id/scroll_horizontal"
+        android:background="@drawable/region_bg"
+        android:gravity="center"
+        android:text="垂\n直\n滑\n动\n区\n域"
+        />
+    <TextView
+        android:id="@+id/click_region"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/scroll_vertical"
+        android:layout_above="@+id/scroll_horizontal"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:background="@drawable/region_bg"
+        tools:text="log\n"
+        >
+
+    </TextView>
+    <TextView
+        android:id="@+id/scroll_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/region_bg"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:text="水平滑动区域"
+        />
+
+</RelativeLayout>
